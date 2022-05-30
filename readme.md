@@ -1,6 +1,7 @@
 所有的组件 建议首字母大写
 
-//在JS里，设置层级递进关系： div > p > span。
+> 1. 在JS里，设置层级递进关系： div > p > span。
+> ```
 const div = document.createElement('div')
 const p = document.createElement('p')
 const span = document.createElement('span')
@@ -9,10 +10,10 @@ p.appendChild(span)
 span.innerText = '我是span'
 
 document.body.appendChild(div);
+```
 
-
-
-//优化1，设置function函数，使上面的声明函数简化。
+>> 优化1，设置function函数，使上面的声明函数简化。
+```
 const div = createElement('div')
 const p = createElement('p')
 const span = createElement('span')
@@ -25,7 +26,7 @@ document.body.appendChild(div);
 function createElement(tagName) {
   return document.createElement(tagName)
 }
-
+```
 
 
 //优化2 在元素内部创建子元素
