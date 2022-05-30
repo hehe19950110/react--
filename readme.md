@@ -1,6 +1,6 @@
 所有的组件 建议首字母大写
 
-> 1. 在JS里，设置层级递进关系： div > p > span。
+> #### 在JS里，设置层级递进关系： div > p > span。
 ```
 const div = document.createElement('div')
 const p = document.createElement('p')
