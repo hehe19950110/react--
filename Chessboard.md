@@ -58,15 +58,15 @@ const Chessboard = function() {
 2. 变量要用{}包裹
 3. 第一层，{cells.map()}得到了一个数组，并为数组里的每一项都设置包裹一个div，包裹的时候，并为div里的每一项再包裹一个div。
 ***/
+
 ReactDOM.render(
   <div>
     <Chessboard />
   </div>,document.getElementById('root')
 )
 ```
-
-
-// 棋盘格效果——3.设置九宫格 三横三竖的样式
+### 棋盘格效果——3.设置九宫格 三横三竖的样式
+```
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
@@ -116,12 +116,12 @@ ReactDOM.render(
     <Chessboard />
   </div>,document.getElementById('root')
 )
-
-
+```
 
 深究useState的原理  https://juejin.cn/post/6867077120691011591
 
-// 棋盘格效果——4.设置九宫格 内部的X
+### 棋盘格效果——4.设置九宫格 内部的X
+```
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
@@ -186,15 +186,15 @@ n 变量的读；setN 变量的写。
 7.   const copy = JSON.parse(JSON.stringify(cells))
 深拷贝，先声明一个新的地址，把原有内容全拷贝一份，然后先变成字符串，再把字符串变成一个新的对象；Cell 每点击一下，就会生成新的对象，页面就会重新渲染.
 ***/
+
 ReactDOM.render(
   <div>
     <Chessboard />
   </div>,document.getElementById('root')
 )
-
-
-
-// 棋盘格效果——5.设置九宫格 判断成功与失败
+```
+### 棋盘格效果——5.设置九宫格 判断成功与失败
+```
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
@@ -302,3 +302,4 @@ ReactDOM.render(
     <Chessboard />
   </div>,document.getElementById('root')
 )
+```
