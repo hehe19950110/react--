@@ -10,9 +10,13 @@ p.appendChild(span)
 span.innerText = '我是span'
 
 document.body.appendChild(div);
+/***
+appendChild() 方法可向节点的子节点列表的末尾添加新的子节点(最后一个子节点）。
+appendChild() 方法可以将已存在的元素节点从一个位置移动到另一个位置。
+***/
 ```
 
-> #### 优化1 设置function函数，使上面的声明函数简化。
+#### 优化1 设置function函数，使上面的声明函数简化。
 ```
 const div = createElement('div')
 const p = createElement('p')
@@ -28,7 +32,7 @@ function createElement(tagName) {
 }
 ```
 
-> #### 优化2 在元素内部创建子元素
+#### 优化2 在元素内部创建子元素
 ```
 const div = createElement('div', 
               createElement('p',
@@ -45,7 +49,7 @@ function createElement(tagName, children) {
 }
 ```
 
-> #### 优化3 在元素内部的子元素中，创建文本格式及文本内容
+#### 优化3 在元素内部的子元素中，创建文本格式及文本内容
 ```
 const div = createElement('div', 
               createElement('p',
@@ -67,7 +71,7 @@ function createElement(tagName, children) {
 }
 ```
 
-> #### 优化4 简化部分过长的元素，将其用等简单的单词或字母指代；t代替createElement
+#### 优化4 简化部分过长的元素，将其用等简单的单词或字母指代；t代替createElement
 ```
 const div = t('div', 
               t('p',
@@ -89,12 +93,12 @@ function t(tagName, children) {
 }
 ```
 
-> #### 优化5 react写法，写一个虚拟的dom 
+#### 优化5 react写法，写一个虚拟的dom 
 ```
 import React from 'react';
 import ReactDOM from ‘react-dom';
 /***
-./react 表示当前加载当前目录下的react文件，；
+‘./react’ 表示当前加载当前目录下的react文件；
 ‘react’ 表示这是一个模块，这是webpack处理的模块，webpack会从node_modules里面去加载这个npm包
 ***/
 
@@ -123,11 +127,6 @@ ReactDOM.render(div, document.getElementById('root'))
 import React from 'react';
 import ReactDOM from ‘react-dom’;
 
-// const div = (
-//   React.createElement('div', null,
-//     React.createElement('p', null,
-//       React.createElement('span', null, 'hi')))
-// )
 const Header = (
   <header>header</header>
 )
