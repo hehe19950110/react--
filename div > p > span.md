@@ -11,6 +11,7 @@ span.innerText = '我是span'
 
 document.body.appendChild(div);
 ```
+
 > #### 优化1 设置function函数，使上面的声明函数简化。
 ```
 const div = createElement('div')
