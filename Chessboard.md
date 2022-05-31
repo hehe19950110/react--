@@ -15,11 +15,19 @@ const Cell = function () {
     </div>
   )
 }
+/***
+在 React中，我们使用 useState 为函数组件设置内部数据，React.useState()接收一个参数作为变量的初始值，返回一个数组，数组的第一项用于变量的读，数组的第二项用于变量的写，
+const [n, setN] = React.useState(0);
+n 变量的读；setN 变量的写。
+
+深究useState的原理  https://juejin.cn/post/6867077120691011591
+***/
 
 ReactDOM.render(<div>
   <Cell />
 </div>,document.getElementById('root'))
 ```
+
 ### 棋盘格效果——2.声明一个数组中的数组
 ```
 import React, { useState } from 'react';
@@ -65,6 +73,7 @@ ReactDOM.render(
   </div>,document.getElementById('root')
 )
 ```
+
 ### 棋盘格效果——3.设置九宫格 三横三竖的样式
 ```
 import React, { useState } from 'react';
@@ -118,8 +127,6 @@ ReactDOM.render(
 )
 ```
 
-深究useState的原理  https://juejin.cn/post/6867077120691011591
-
 ### 棋盘格效果——4.设置九宫格 内部的X
 ```
 import React, { useState } from 'react';
@@ -136,16 +143,10 @@ const Cell = function(props) {
 
 const Chessboard = function() {
   const [cells, setCells] = React.useState([
-    [1,1,1],
-    [2,2,2],
-    [3,3,3],
+    [null,null,null],
+    [null,null,null],
+    [null,null,null],
   ])
-/***
-useState 
-在 React中，我们使用 useState 为函数组件设置内部数据，React.useState()接收一个参数作为变量的初始值，返回一个数组，数组的第一项用于变量的读，数组的第二项用于变量的写，
-const [n, setN] = React.useState(0);
-n 变量的读；setN 变量的写。
-***/
 
   const onClickCell = (row,col)=> {
     console.log('on click cell')
@@ -193,6 +194,7 @@ ReactDOM.render(
   </div>,document.getElementById('root')
 )
 ```
+
 ### 棋盘格效果——5.设置九宫格 判断成功与失败
 ```
 import React, { useState } from 'react';
@@ -213,12 +215,6 @@ const Chessboard = function() {
     [null,null,null],
     [null,null,null],
   ])
-  /***
-  useState 
-  在 React中，我们使用 useState 为函数组件设置内部数据，React.useState()接收一个参数作为变量的初始值，返回一个数组，数组的第一项用于变量的读，数组的第二项用于变量的写，
-  const [n, setN] = React.useState(0);
-  n 变量的读；setN 变量的写。
-  ***/
 
   const [n,setN] = useState(0)
   const [finished,setFinished] = useState(false)
@@ -234,7 +230,7 @@ const Chessboard = function() {
     //竖：
     for(let i=0;i<3;i++) {
       if (cells [0][i] == cells [1][i] && 
-		 cells [1][i] == cells [2][i] &&
+	  cells [1][i] == cells [2][i] &&
           cells [0][i] !== null) {
           console.log(cells [0][i] + '赢了')
           setFinished(true)
