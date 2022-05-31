@@ -27,7 +27,8 @@ function createElement(tagName) {
   return document.createElement(tagName)
 }
 ```
->> #### 优化2 在元素内部创建子元素
+
+> #### 优化2 在元素内部创建子元素
 ```
 const div = createElement('div', 
               createElement('p',
@@ -43,6 +44,7 @@ function createElement(tagName, children) {
   return Element
 }
 ```
+
 > #### 优化3 在元素内部的子元素中，创建文本格式及文本内容
 ```
 const div = createElement('div', 
@@ -63,7 +65,8 @@ function createElement(tagName, children) {
   }
   return element
 }
-````
+```
+
 > #### 优化4 简化部分过长的元素，将其用等简单的单词或字母指代；t代替createElement
 ```
 const div = t('div', 
@@ -84,7 +87,8 @@ function t(tagName, children) {
   }
   return element
 }
-````
+```
+
 > #### 优化5 react写法，写一个虚拟的dom 
 ```
 import React from 'react';
@@ -113,6 +117,7 @@ console.log(div) //element，是虚拟的element
 
 ReactDOM.render(div, document.getElementById('root'))
 ```
+
 > #### 优化6 react写法，用JS的写法 写组合
 ```
 import React from 'react';
