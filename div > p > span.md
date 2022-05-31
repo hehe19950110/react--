@@ -122,7 +122,7 @@ console.log(div) //element，是虚拟的element
 ReactDOM.render(div, document.getElementById('root'))
 ```
 
-> #### 优化6 react写法，用JS的写法 写组合
+#### 优化6 react写法，用JS的写法 写组合
 ```
 import React from 'react';
 import ReactDOM from ‘react-dom’;
